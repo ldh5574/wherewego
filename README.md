@@ -119,8 +119,7 @@ Quit the server with CTRL-BREAK.
 
 - Open your IE, and Put URL "127.0.0.1:8000". And Press enter!
 - Then you will see
-
-![](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e72fbcaa-1046-49f1-9b22-48f57dfc4b6e/Reult1.jpg)
+![image](https://github.com/ldh5574/wherewego/assets/46510929/b725ff5d-a987-4a27-a857-5a2a6895729b)
 
 - NOW, your Django is working hard.
 
@@ -131,7 +130,8 @@ Quit the server with CTRL-BREAK.
     Don't worry! Our kind Origin developer provides .py to put your .csv files into already existing models.
     But first, here is our Service model.
 
-![](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/35421f56-1f7f-4370-9314-51b02118327e/_.jpg)
+![image](https://github.com/ldh5574/wherewego/assets/46510929/345dc273-f08e-478c-950c-332ad1d27242)
+
 
 1. Raw data which crawler crawled will be refined, and then Machine learning uses them as input data.
     After that, those results will be saved as one file of ".csv" format.
@@ -153,7 +153,8 @@ G. Then, some Search Engine returns results.
 
 - And next, here is our Database table modeling.
 
-![](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/65a6e630-24f1-464d-81e6-756b319fb9f1/db2.jpg)
+![image](https://github.com/ldh5574/wherewego/assets/46510929/1e56405b-cf11-4c40-98d1-f5f3a988e300)
+
 
 - rawdata is raw data which Crawler got.
 - Dic is refined data which passed Machine Learning layers.
@@ -164,7 +165,8 @@ G. Then, some Search Engine returns results.
     try that in Venv Prompt by using "python (or py or python3) DBSynchronizerTest.py"
     if you see this message, DB connection has been created!
 
-![](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ea7c6bc8-d980-4173-b8ee-658b2a1d631d/testdb1.jpg)
+![image](https://github.com/ldh5574/wherewego/assets/46510929/3650bcf0-ee75-4aba-af0a-50d26c97e5b2)
+
 
 ## Eighth. Now, Put your .CSV infos into our Project DB!
 
