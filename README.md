@@ -1,130 +1,173 @@
+
+
+# wherewego
+
+## Our Project consists of Frontend(android) - Backend(Python_Django Web Framework) model.
+  ### Our projects service modeling follows...
+    1. A user puts the name of a place (e.g., "상암동") in the Frontend-App.
+    2. Chooses one of his/her trip concepts, like "chilling or best restaurant".
+    3. These infos will be transferred to Backend.
+    4. Our Backend program finds places which are uploaded on Naver Blog posts:
+       - This might be curious, why use Naver Blog posts?
+         - A: Some companies, restaurants might pay for Ads, and we can't be sure of their infos or scores.
+               But we can trust real reviews, and the easiest way to get those reviews is posts.
+    5. Our Backend Program scores places and returns some places that got good scores.
+       - Which means our project recommends places.
+    6. Backend program returns places' coords, and Frontend will find places by that.
+
+## Wrote on 17th Aug 2019
+
+### On Develop.
+
+## Here is our project develop schedule.
+
+1. Backend Develop will start from 3rd Sep 2019.
+2. Frontend Develop was suspended until 15th Sep 2019, but after that, it will start developing
+   at the same time as backend developing.
+3. From 17th Aug 19 to 2nd Sep 2019, We will develop our Internal Algorithm.
+
+## Until now..
+
+1. Backend isn't prepared at all including modeling, design for everything.
+2. Frontend was suspended after importing google API, which is functional now.
+3. In Source, Crawler code fully functional which is in "enhanced folder".
+   - Also, this code excludes some \t, \^ sort of things.
+
+## Why Back, Frontend development suspended?
+
+  ***From 17th Aug 2019 to 2nd Sep 2019, we will develop our internal Algorithm.***
+  - Which is scoring our results. 
+    - If our Algorithm returns some name of restaurant, places, then it must be scored, which is good or not.
+    - We are using TensorFlow, Pandas. 
+    - It should be done or at least done by 50% until 2nd Sep 2019. So we will work on it.
+    
+## So, What will we going to do in developing internal algorithm?
+  - Using TensorFlow or sort of things.
+  - For now (17th Aug 2019), We are considering using pandas for manage our final data.
+  - Constructing system flow.
+
+---
+
 **Welcome to Wherewego API Docs!**
 
 ## This page describes how to setup your local server env.
 
 - This page also describes how to sync with origin developer's env.
-- We are using MySQL server 5.7 and MySQL Workbench 8.0.
-- Install MySQL in your host environment first.
+- We are using mysql server 5.7 and mysqlWorkbench 8.0.
+- Install mysql in your host env first.
 
-## General: We decided to provide Jupyter Notebook on our project.
+## General: We decided to provide JupyterNotebook on our project.
 
-- Reference: [http://www.incodom.kr/Jupyter_in_Django](http://www.incodom.kr/Jupyter_in_Django)
+- Reference: http://www.incodom.kr/Jupyter_in_Django
 - We listed django-extensions on "requirements.txt" so all you need is
-    
-    Put this command "pip install notebook" into your Venv prompt 
-    
-    Then you can use Jupyter Notebook on our project environment.
-    
+    put this command "pip install notebook" into your Venv prompt 
+    Then you can use JupyterNotebook on our Project env.
+
 ## First, Get your own **Miniconda**
 
-- Our platform uses Django on Miniconda environment, so install your own Conda.
-- Then, use "conda create —n [Your Virtual Env name] python=3.7" command to create a new virtual environment.
-- Then, activate it! (by using "conda activate [Your Virtual Env name]")
-- Then use command "cd [Your Folder Path]" to move your project folder.
-
-- Origin Developer's Virtual Env (from now on, Venv) name is "wherewego".
+- Our platform uses Django on Miniconda env. so install your own Conda.
+- Then, use "conda create —n [Your Virtual Env name] python=3.7" command to create a new virtual Environment.
+- Then activate it! (by using "conda activate [Your Virtual Env name]")
+- Then use command "cd [Your Folder Path]" to move your project folder
+- Origin Developer's Virtual Env (from now on, Venv) name is "wherewego"
 
 ## Second, Install Django on your Miniconda Env
 
-- Just use "pip install Django" command then conda will do everything without disturbance.
+- Just use "pip install Django" command then conda will do everything without disturbs.
 - When you finished, you are ready to use Django!
-
-- Other requirements will be described in "requirements.txt"
-    
+- Other requirements will be described on "requirements.txt"
     And this page will tell you how to use it.
-    
-## Third. Shall we start the Django Project?
 
-- In this project, you will clone the Origin developer's source code, so just clone it!
-    
-    BUT BE AWARE! You might not want to clone all files including the FrontEnd folder.
-    
-    It includes 1000+ files, so just clone the "Backend" folder only.
-    
-- Now, check out your "requirements.txt" file in your cloned folder.
-    
-    That file includes requirements to use our project. But, first, you must delete
-    
-    "Django2.2.-", "pytz". It is already installed in your Venv, so delete them first.
-    
+## Third. Shall we start Django Project?
+
+- In this project, You will clone Origin developer's source code, so Just clone it!
+    BUT BE AWARE! You might not want to clone all files including FrontEnd folder.
+    It includes 1000+ files. so Just clone "Backend" folder only.
+- Now, checkout your "requirements.txt" file in your cloned folder.
+    That file includes requirements to use our Project. But, first, you must delete
+    "Django2.2.-", "pytz". It is already installed in your Venv. so delete them first.
 - Then use "pip install -r requirements.txt" command in your Venv prompt.
 
-### BE AWARE!
+### BEWARE!
 
-- Some problems might occur when using requirements.txt file. In that case, use "conda install" instead of "pip install" for specific libraries.
-- If you encounter errors with Django version compatibility, try installing the compatible versions as specified in the documentation.
+- Some problem has occurred by using only requirements.txt
+    Which means, Venv has those listed pip things but localhost doesn't
+    So if you encountered any "Import problem", try to manually install pip things
+    which are listed in "localRequirements.txt". 
+    Writing this page, I encountered "PyMysql import problem" So I added it in "localRequirements.txt"
+    Please notice us any import problem occurs. Then We will add it to that txt.
 
-## Using MySQL Server
+## Fourth. You gotta sync your Django Project with origin developer's
 
-- To connect your Django project to MySQL, update your settings.py file with the appropriate database configurations.
-- Ensure MySQL server is running and accessible.
+- First, Create your DB. By using command in mysql workbench "CREATE DATABASE [DB name] CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;"
+     - By the way, Origin's DB name is wherewego.
+- Second, Ask "my_settings.py" file to your origin developer. That is Configure scheme File.
+- Third, put "my_settings.py" which you got, into your project Folder. /'' -which is same location with "manage.py" file.- and modify that file following instructions in file.
+- Fourth. use "py [manage.py](http://manage.py) migrate" in venv (conda prompt) then your DB will be synced with developer's.
 
-## Setting Up the Frontend
+## Fifth. Shall we check our Django working hard?
 
-- The frontend part of the project uses React.js. Ensure you have Node.js installed.
-- Navigate to the Frontend directory and run "npm install" to install all dependencies.
-- Use "npm start" to launch the development server.
+- First, use command "py [manage.py](http://manage.py) runserver 0.0.0.0:8000" to run your server.
+- If you worked properly, this results will be printed
 
-## Syncing with Origin Developer's Environment
+```python
+August 27, 2019 - 17:19:20
+Django version 2.2.1, using settings 'wherewego.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+```
 
-- To keep your environment in sync with the origin developer's setup, follow the instructions provided in the synchronization guide.
-- Regularly pull updates from the main repository to stay up-to-date with changes.
+- Open your IE, and Put URL "127.0.0.1:8000". And Press enter!
+- Then you will see
 
-## Backend and Frontend Communication
+![](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e72fbcaa-1046-49f1-9b22-48f57dfc4b6e/Reult1.jpg)
 
-- The backend communicates with the frontend through RESTful APIs.
-- Ensure CORS is configured correctly in Django settings to allow frontend to communicate with the backend.
+- NOW, your Django is working hard.
 
-## Deployment
+## Sixth. Just read it please.
 
-- For deploying the project, consider using services like Heroku, AWS, or DigitalOcean.
-- Set up environment variables for production settings and secure your application accordingly.
+- Django is a web framework which reacts to other things' requests. So, local workset shouldn't be included in Django things.
+- Now, you might wonder how to put your ".CSV" files into the project.
+    Don't worry! Our kind Origin developer provides .py to put your .csv files into already existing models.
+    But first, here is our Service model.
 
-## Project Overview
+![](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/35421f56-1f7f-4370-9314-51b02118327e/_.jpg)
 
-### Backend
+1. Raw data which crawler crawled will be refined, and then Machine learning uses them as input data.
+    After that, those results will be saved as one file of ".csv" format.
+2. Then, Those data will be put by "DBSynchronizer.py" which is created by origin developer.
 
-1. The backend is built with Django and follows a modular structure.
-2. Key functionalities include user authentication, data management, and API endpoints.
+A. Front end user inputs his/her location coordinates. then it will be sent to Backend server 
+    as a format of coordinates or as a name of place.
 
-### Frontend
+B. Backend server accesses to DB to pull results.
 
-1. The frontend is built with React.js and provides a responsive user interface.
-2. It interacts with the backend through API calls to fetch and display data.
+C. It will be pulled following some instructions, formats.
 
-### Database
+D. Our Backend Server returns those results.
 
-1. The project uses MySQL for data storage.
-2. Ensure you have the correct database schema set up by running migrations.
+F. If resultset is coordinates, then we need to search those places.
 
-### Key Features
+G. Then, some Search Engine returns results.
+  - or, Front End can use its own "googlemap API".
 
-1. User authentication and authorization.
-2. Data visualization using charts and graphs.
-3. Integration with external APIs for enhanced functionality.
+- And next, here is our Database table modeling.
 
-## Development Schedule
+![](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/65a6e630-24f1-464d-81e6-756b319fb9f1/db2.jpg)
 
-1. Backend development started on 3rd September 2019.
-2. Frontend development was suspended until 15th September 2019 but will continue concurrently with backend development.
-3. From 17th August 2019 to 2nd September 2019, focus was on developing the internal algorithm.
+- rawdata is raw data which Crawler got.
+- Dic is refined data which passed Machine Learning layers.
 
-## Internal Algorithm Development
+## Seventh. Let's put something into existing tables.
 
-- Using TensorFlow and Pandas to manage and score data.
-- Aim to complete or reach at least 50% of the algorithm development by 2nd September 2019.
+- Our kind Origin developer added "DBSynchronizerTest.py" in the folder "Backend".
+    try that in Venv Prompt by using "python (or py or python3) DBSynchronizerTest.py"
+    if you see this message, DB connection has been created!
 
-## Current Status
+![](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ea7c6bc8-d980-4173-b8ee-658b2a1d631d/testdb1.jpg)
 
-1. Backend is not fully prepared, including modeling and design.
-2. Frontend development was suspended after integrating Google API, which is functional now.
-3. Crawler code in the "enhanced folder" is fully functional and excludes certain unwanted characters.
+## Eighth. Now, Put your .CSV infos into our Project DB!
 
-## Future Plans
+WIP
+tmr, need to do from .CSV to xlsx, and get in DB
 
-- Continue backend and frontend development as per the schedule.
-- Improve and finalize the internal algorithm for better data scoring and recommendations.
-
-**Wrote on 17th August 2019**
-
-### On Develop
